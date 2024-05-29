@@ -1,0 +1,60 @@
+String Search Operations
+
+# Function to convert text to lowercase
+def to_lower_case(text):
+    # Converts all characters in 'text' to lowercase
+    return text.lower()
+
+# Function to count the number of characters in a string
+def count_characters(text):
+    # Uses len() to find the total number of characters in 'text'
+    return len(text)
+
+# Function to split text into words and sort them alphabetically
+def split_and_sort_words(text):
+    # Splits 'text' into a list of words using split()
+    words = text.split()
+    # Sorts the list of words alphabetically, ignoring case, and returns it
+    return sorted(words, key=str.lower)
+
+# Function to count the number of words in a list
+def count_words(words):
+    # Uses len() to count the number of items (words) in the list 'words'
+    return len(words)
+
+# Function to count occurrences of each keyword in the text
+def count_keyword_occurrences(text, keywords):
+    # Creates a dictionary to store counts of each keyword in 'text'
+    # Loops through each keyword and counts its occurrences in 'text' using count()
+    return {keyword: text.count(keyword) for keyword in keywords}
+
+# Main function to execute the script
+def main():
+    # Excerpt text from "The Hacker Manifesto"
+    excerpt = ("Another one got caught today, it's all over the papers. Teenager"
+               " Arrested in Computer Crime Scandal, Hacker Arrested after Bank Tampering"
+               " Damn kids. They're all alike")
+
+    # Convert excerpt to lower case
+    lower_case_excerpt = to_lower_case(excerpt)
+    # Count characters in the lower case excerpt
+    char_count = count_characters(lower_case_excerpt)
+    # Split and sort words in the lower case excerpt
+    sorted_words = split_and_sort_words(lower_case_excerpt)
+    # Count the number of words in the sorted list
+    word_count = count_words(sorted_words)
+    # Define keywords for search
+    search_terms = ['scandal', 'arrested', 'er', 'good', 'tomorrow']
+    # Count occurrences of each keyword in the lower case excerpt
+    keyword_counts = count_keyword_occurrences(lower_case_excerpt, search_terms)
+
+    # Print results
+    print("LowerCase String:\n", lower_case_excerpt)
+    print("\nString Length:", char_count)
+    print("\nSorted Word List and Count:", sorted_words)
+    print("\nWord Count:", word_count)
+    print("\nKeyword Occurrences:", keyword_counts)
+
+# Execute the main function when the script is run
+if __name__ == "__main__":
+    main()
