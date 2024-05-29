@@ -1,4 +1,4 @@
-String Search Operations
+#STRING SEARCH OPERATIONS
 
 # Function to convert text to lowercase
 def to_lower_case(text):
